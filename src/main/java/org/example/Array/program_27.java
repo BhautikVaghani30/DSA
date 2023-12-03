@@ -34,7 +34,7 @@ public class program_27 {
         int[] arr = {1, 0, 1, 0, 1, 0, 0, 1, 1, 0};
 
         System.out.println("Original array: " + Arrays.toString(arr));
-     
+
         moveZerosAndOnes(arr);
 
         System.out.println("Array after moving 0s to the right and 1s to the left: " + Arrays.toString(arr));
