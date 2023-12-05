@@ -1,19 +1,28 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String s = "0P";
+        s=s.toLowerCase();
+        System.out.println(s);
+        StringBuilder sb = new StringBuilder();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        for(int i = 0; i<s.length(); i++){
+            int asci = s.charAt(i);
+            if(asci >= 97 && asci <= 122) sb.append(s.charAt(i));
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
         }
+        String str = sb.toString();
+        System.out.println(str);
+        char[] c = str.toCharArray();
+        int n = c.length;
+        for(int i = 0; i<n/2; i++)
+        {
+            if(c[i] != c[n-i-1]){
+                System.out.println("false");
+                return;
+            }
+        }
+        System.out.println("true");
     }
 }
