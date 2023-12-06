@@ -1,6 +1,7 @@
 package org.example.LinkList;
 
 import javax.xml.crypto.Data;
+import java.util.HashSet;
 import java.util.Stack;
 
 public class LL {
@@ -260,8 +261,36 @@ public class LL {
         System.out.println("head data is : " + head.data);
         System.out.println("tail data is : " + tail.data);
     }
+
 //    2. Count nodes / length of linked list
     public void countNode(){
         System.out.println("size of link list is : " + size);
+    }
+
+    public void removeDuplicatesSingli() {
+        if (head == null) {
+            return;
+        }
+
+        HashSet<Integer> uniqueValues = new HashSet<>();
+        Node current = head;
+        Node previous = null;
+
+        while (current != null) {
+            int data = current.data;
+
+
+            if (uniqueValues.contains(data)) {
+                previous.next = current.next;
+            } else {
+
+                uniqueValues.add(data);
+                previous = current;
+            }
+
+            current = current.next;
+        }
+
+
     }
 }
