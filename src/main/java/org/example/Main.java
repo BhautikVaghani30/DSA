@@ -1,21 +1,14 @@
 package org.example;
 
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        int n = 20;
-        int j=1;
-        int sum = 0;
-        int k = 2;
-        int d = 7;
-        for (int i = 0; i < n; i++) {
-            if (i==d){
-                j=k;
-                k++;
-                d+=7;
-
-            }
-            sum += j;
-            j++;
-        }
+        int[] ar = {
+            1,2,2,6,6,6,6,7,10
+        };
+        int half = ar.length / 2;
+        int half_half = half/2;
+        System.out.println(half_half);
     }
 }
