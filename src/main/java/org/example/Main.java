@@ -4,39 +4,25 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
-        String[] str = {"5","2","C","D","+"};
-        char[] crr = new char[str.length];
-
-
+        String title = "FIrsT leTTeR of EACH Word";
+        String[] str = title.split(" ");
+//        String s = str[0].substring(0,1).toUpperCase();
+//        String l = str[0].substring(1,str[0].length()).toLowerCase();
+//        String word = s+l;
+//        System.out.println(word);
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < str.length; i++) {
-            crr = str[i].toCharArray();
-            int asci = crr[0];
+            if (str[i].length() == 1 || str[i].length() == 2) {
 
-            if (stack.isEmpty()){
-                int n = Integer.parseInt(String.valueOf(asci));
-                System.out.println(n);
-                stack.push(48-n);
+                sb.append(str[i].toLowerCase() + " ");
+                continue;
             }
-            if (asci>=48 && asci <= 57){
-                int n = Integer.parseInt(String.valueOf(asci));
-                stack.push(48-n);
-            } else if (asci == 67) {
-                stack.pop();
-            } else if (asci == 68) {
-                stack.push(stack.peek()*2);
-            } else if (asci == 43) {
-                int curr = stack.peek();
-                stack.pop();
-                int sum = stack.peek() + curr;
-                stack.push(curr);
-                stack.push(sum);
-            }
+            String s = str[i].substring(0,1).toUpperCase();
+            String l = str[i].substring(1,str[i].length()).toLowerCase();
+            String word = s+l;
+            sb.append(word + " ");
         }
-        int sum = 0;
-        while (!stack.isEmpty()){
-            sum+=stack.pop();
-        }
-        System.out.println(sum);
+        System.out.println(sb.toString());
     }
+
 }

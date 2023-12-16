@@ -137,6 +137,8 @@ public class LL {
     public void size() {
         System.out.println("size of Link list is : " + size);
     }
+
+
 //program_7
 //    public void deleteNode(int i) {
 //        Node temp = Node.next;
@@ -255,6 +257,30 @@ public class LL {
             }
         }
     }
+    public void remove(int i) {
+        if (head == null && tail == null){
+            System.out.println("LinkList is Empty");
+            return;
+        }
+        if(head.data == i){
+            head = head.next;
+            size--;
+
+        }
+
+            Node temp = head;
+            Node seound = head.next;
+            while (temp != null && temp.next != null){
+                if (head.data == i){
+                    head = head.next;
+                }
+//                if (temp.data == i && temp.next.data == i){
+//                    temp.next = temp.next.next;
+//                }
+                temp = head;
+                temp = temp.next;
+            }
+        }
 
 
     public void getheadtail() {
